@@ -1,0 +1,41 @@
+{
+    "name": "patronbase/omnipay-epsom-adelante",
+    "type": "library",
+    "description": "Epsom connector to Adelante (ConnectPay) driver for the Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "adelante",
+        "connectpay",
+        "websmartconnect",
+        "smartpay"
+    ],
+    "homepage": "https://github.com/PatronBase/omnipay-epsom-adelante",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leith Caldwell",
+            "email": "leith@codedruids.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\EpsomAdelante\\" : "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Omnipay\\EpsomAdelante\\" : "tests/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
