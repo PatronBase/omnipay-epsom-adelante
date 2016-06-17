@@ -115,8 +115,8 @@ class PurchaseRequest extends AbstractRequest
             $data += [
                 'cfname'    => $card->getFirstName(),
                 'csname'    => $card->getLastName(),
-                'chouse'    => $card->getAddress1(), // @todo "house name or number"
-                'cadd1'     => $card->getAddress2(), // @todo "street/road"
+                'chouse'    => $card->getAddress1(), // "house name or number"
+                'cadd1'     => $card->getAddress2(), // "street/road"
                 'ctown'     => $card->getCity(),
                 'cpostcode' => $card->getPostcode(),
                 'ccountry'  => $card->getCountry(),
