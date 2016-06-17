@@ -95,6 +95,8 @@ class Item extends BaseItem
         // @todo would be nicer if this could be done with AbstractRequest currency functions (or similar)
         if (is_float($value) || (is_string($value) && strpos($value, '.') !== false)) {
             $value = (int) round($value * 100);
+        } else {
+            $value = (int) $value;
         }
 
         return parent::setPrice($value);
