@@ -25,6 +25,8 @@ class Gateway extends AbstractGateway
      * returnMethod : either 'post' or 'redirect'; anything blank/invalid will result in 'post'
      * sendMail : 'y' if gateway sends receipt to user; blank/invalid (or if no email address supplied) means no email
      *
+     * currency should also be set to 'GBP'
+     *
      * @return array
      */
     public function getDefaultParameters()
@@ -36,7 +38,6 @@ class Gateway extends AbstractGateway
             'sendMail' => '',
             'testEndpoint' => '',
             'liveEndpoint' => '',
-            'currency' => 'GBP',
             'testMode' => false,
         );
     }
