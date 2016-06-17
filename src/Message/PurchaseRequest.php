@@ -112,7 +112,7 @@ class PurchaseRequest extends AbstractRequest
         // get and merge customer data
         $card = $this->getCard();
         if ($card) {
-            $data += [
+            $data += array(
                 'cfname'    => $card->getFirstName(),
                 'csname'    => $card->getLastName(),
                 'chouse'    => $card->getAddress1(), // "house name or number"
@@ -122,7 +122,7 @@ class PurchaseRequest extends AbstractRequest
                 'ccountry'  => $card->getCountry(),
                 'ctel'      => $card->getPhone(),
                 'cemail'    => $card->getEmail(),
-            ];
+            );
         }
 
         // get and merge line item data
@@ -130,11 +130,11 @@ class PurchaseRequest extends AbstractRequest
         $fundcode = $this->getFundCode();
         if (empty($items)) {
             $this->validate('amount', 'fundCode');
-            $data += [
+            $data += array(
                 'amount'   => $this->getAmountInteger(),
                 'fundcode' => $fundcode,
                 'custref1' => $this->getDescription(),
-            ];
+            );
         } else {
             foreach ($items as $n => $item) {
                 $suffix = $n > 0 ? '_a'.$n : '';
@@ -146,7 +146,7 @@ class PurchaseRequest extends AbstractRequest
                 $itemCustref4 = $item->getCustRef4();
 
                 // amount, fundcode and custref1 are required
-                $data += [
+                $data += array(
                     'amount'.$suffix      => $item->getQuantity() * $item->getPrice(),
                     'fundcode'.$suffix    => empty($itemFundcode) ? $fundcode : $itemFundcode,
                     'custref1'.$suffix    => empty($itemCustref1) ? $item->getName() : $itemCustref1,
@@ -154,7 +154,7 @@ class PurchaseRequest extends AbstractRequest
                     'custref3'.$suffix    => empty($itemCustref3) ? '' : $itemCustref3,
                     'custref4'.$suffix    => empty($itemCustref4) ? '' : $itemCustref4,
                     'description'.$suffix => substr($item->getDescription(), 0, 255),
-                ];
+                );
             }
         }
 
