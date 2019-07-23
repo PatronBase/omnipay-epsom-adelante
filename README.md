@@ -1,5 +1,7 @@
 # Omnipay: Epsom connector to Adelante
 
+***NOTE: THIS DRIVER IS ARCHIVED***
+
 **Epsom connector to Adelante (ConnectPay) driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/PatronBase/omnipay-epsom-adelante.png?branch=master)](https://travis-ci.org/PatronBase/omnipay-epsom-adelante)
